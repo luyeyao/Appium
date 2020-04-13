@@ -2,6 +2,7 @@ package app.page;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -32,10 +33,11 @@ public class App extends BasePage{
     public static TaxiPage toTaxi() {
 //        MobileElement el2 = (MobileElement) driver.findElementById("com.crgt.ilife:id/tv_left");
 //        el2.click();//关闭首页访问权限设置
-        MobileElement el3 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView");
-        el3.click();//进入打车页面
-        MobileElement el4 = (MobileElement) driver.findElementById("com.crgt.ilife:id/iv_dialog_ad_close");
-        el4.click(); //关闭弹窗
+        MobileElement el3 = (MobileElement) driver.findElementByXPath ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView");
+        el3.click();
+        //进入打车页面
+//        MobileElement el4 = (MobileElement) findElement(By.id("com.crgt.ilife:id/iv_dialog_ad_close"));
+//        el4.click(); //关闭弹窗
 
         return new TaxiPage();
     }
