@@ -31,13 +31,15 @@ public class App extends BasePage{
     }
 
     public static TaxiPage toTaxi() {
-//        MobileElement el2 = (MobileElement) driver.findElementById("com.crgt.ilife:id/tv_left");
-//        el2.click();//关闭首页访问权限设置
-        MobileElement el3 = (MobileElement) driver.findElementByXPath ("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView");
-        el3.click();
+        //findElement(By.id("com.crgt.ilife:id/tv_left"));//关闭首页访问权限设置
+        findElement(By.id("com.crgt.ilife:id/iv_dialog_ad_close"));//关闭首页广告
+
+        findElementAndClick(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout"));
         //进入打车页面
-//        MobileElement el4 = (MobileElement) findElement(By.id("com.crgt.ilife:id/iv_dialog_ad_close"));
-//        el4.click(); //关闭弹窗
+        findElement(By.id("com.crgt.ilife:id/iv_dialog_ad_close"));
+        //关闭打车弹窗
+        findElementAndClick (By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.view.ViewGroup/androidx.appcompat.widget.LinearLayoutCompat/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView"));
+        //点击“去哪儿”输入框
 
         return new TaxiPage();
     }
