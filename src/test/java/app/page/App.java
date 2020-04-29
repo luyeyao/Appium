@@ -12,15 +12,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 public class App extends BasePage{
-
-    private HomePageObjects homePageObjects = new HomePageObjects();
 
 
     public static void start() throws MalformedURLException {
@@ -51,8 +48,7 @@ public class App extends BasePage{
         }//通知权限弹窗
 
         try{
-            MobileElement el2 = (MobileElement) driver.findElementById("com" +
-                    ".crgt.ilife:id/iv_dialog_ad_close");
+            MobileElement el2 = (MobileElement) driver.findElementById("com.crgt.ilife:id/iv_dialog_ad_close");
             el2.click();
         }catch(Exception e){
             log.print(e);
@@ -74,5 +70,26 @@ public class App extends BasePage{
         //关闭打车弹窗
 
         return new TaxiPage();
+    }
+
+    public static TravlePage toTravel(){
+        MobileElement el1 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget" +
+                ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget" +
+                ".LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget" +
+                ".FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget" +
+                ".RelativeLayout[2]");//行程
+        el1.click();
+
+        MobileElement el2 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget" +
+                ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget" +
+                ".LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget" +
+                ".ViewPager/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget" +
+                ".RecyclerView/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget" +
+                ".TextView[4]");//打开添加行程弹窗
+        el2.click();
+        MobileElement el3 = (MobileElement) driver.findElementById("com.crgt.ilife:id/tv_add_trip_by_hand");
+        el3.click();//进入添加行程页面
+
+        return new TravlePage();
     }
 }

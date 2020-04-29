@@ -24,6 +24,7 @@ public class TestTaxi {
     @Test
     public void taxi(){
         assertThat(taxiPage.taxi("星民大厦").getTaxiPrice(), equalTo(14));
+
     }
 
 //    @After
