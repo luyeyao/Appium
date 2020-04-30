@@ -46,7 +46,7 @@ public class BasePage {
 
 
 
-
+//明天来了处理封装click方法
     //遍历处理弹窗
         public static WebElement findElement(By by){
         try{

@@ -2,9 +2,7 @@ package app.page;
 
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
-
 import java.util.List;
-
 import static app.page.App.driver;
 
 public class TaxiPage{
