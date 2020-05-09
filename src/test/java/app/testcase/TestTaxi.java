@@ -6,6 +6,7 @@ import io.appium.java_client.MobileElement;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.lang.reflect.Array;
@@ -17,6 +18,7 @@ import static app.page.App.driver;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
+@RunWith(Parameterized.class)
 public class TestTaxi {
     public static TaxiPage taxiPage;
     @BeforeClass
@@ -25,6 +27,7 @@ public class TestTaxi {
         taxiPage = App.toTaxi();
     }
 
+    //参数化
     @Parameterized.Parameters
     public static List<String> data(){
         List<String> travel = new ArrayList<>();
@@ -33,6 +36,11 @@ public class TestTaxi {
         travel.add("");
         return travel;
     }
+
+    @Parameterized.Parameter
+    public String travel;
+
+
 
     @Test
     public void taxi(){
